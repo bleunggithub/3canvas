@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- font awesome -->
+		<script
+			src="https://kit.fontawesome.com/fdd79be92b.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- google font -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Kumbh+Sans"
+		/>
+		<!-- custom css -->
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+
+	<body>
+		<div id="canvas-container">
+			<canvas id="canvas-real" class="canvas"></canvas>
+			<canvas id="canvas-draft" class="canvas"></canvas>
+		</div>
+
+		<div class="buttons">
+			<div id="description"></div>
+			<!-- rectangle button  -->
+			<span class="button far fa-square" id="drawRectangle"></span>
+			<!-- freehand button  -->
+			<span class="button fas fa-pencil-alt" id="drawFreehand"></span>
+			<!-- paintbrush button -->
+			<span class="button fas fa-paint-brush" id="paintbrush"></span>
+			<!-- polygon button -->
+			<span class="button fas fa-draw-polygon" id="drawPolygon"></span>
+			<!-- bucket button -->
+			<span class="button fas fa-fill" id="bucket"></span>
+		</div>
+
+		<!-- JS scripts -->
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- The drawing functionality  -->
+		<script
+			src="./javascript/canvasCommon.js"
+			type="text/javascript"
+			async
+			defer
+		></script>
+
+		<!-- The drawing line functionality  -->
+		<script
+			src="./javascript/drawingFreehand.js"
+			type="text/javascript"
+			async
+			defer
+		></script>
+
+		<!-- The drawing rectangle functionality  -->
+		<script
+			src="./javascript/drawingRectangle.js"
+			type="text/javascript"
+			async
+			defer
+		></script>
+	</body>
+</html>

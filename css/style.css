@@ -1,0 +1,44 @@
+body {
+	overflow: hidden;
+	color: #000;
+}
+
+.canvas {
+	background-color: blue; /*blue for visibility*/
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+#canvas-container {
+	height: 90vh;
+	display: block;
+}
+
+#canvas-draft {
+	background-color: transparent;
+}
+
+/* buttons */
+#description {
+	display: block;
+	margin-top: 0.5vh;
+	height: 2vh;
+	margin-bottom: 1vh;
+	font-family: "Kumbh Sans";
+	color: #000;
+}
+span {
+	color: #000;
+}
+.buttons {
+	display: inline-block;
+}
+.button {
+	color: #fff;
+	background-color: #000;
+	padding: 0.5vh;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
