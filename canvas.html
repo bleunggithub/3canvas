@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title></title>
+		<title>CANVAS</title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!-- font awesome -->
@@ -14,7 +14,14 @@
 		<!-- google font -->
 		<link
 			rel="stylesheet"
-			href="https://fonts.googleapis.com/css?family=Kumbh+Sans"
+			href="https://fonts.googleapis.com/css?family=Kumbh+Sans|Namum+Gothic:wght@700;800"
+		/>
+		<!-- Bootstrap core CSS -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous"
 		/>
 		<!-- custom css -->
 		<link rel="stylesheet" href="./css/style.css" />
@@ -26,18 +33,79 @@
 			<canvas id="canvas-draft" class="canvas"></canvas>
 		</div>
 
-		<div class="buttons">
-			<div id="description"></div>
-			<!-- rectangle button  -->
-			<span class="button far fa-square" id="drawRectangle"></span>
-			<!-- freehand button  -->
-			<span class="button fas fa-pencil-alt" id="drawFreehand"></span>
-			<!-- paintbrush button -->
-			<span class="button fas fa-paint-brush" id="paintbrush"></span>
-			<!-- polygon button -->
-			<span class="button fas fa-draw-polygon" id="drawPolygon"></span>
-			<!-- bucket button -->
-			<span class="button fas fa-fill" id="bucket"></span>
+		<div class="textCon container-fluid">
+			<!-- descriptions -->
+			<div class="row justify-content-center descriptionRow">
+				<!-- group one description - drawing tools -->
+				<div id="description1" class="col-lg-4 col-md-3 col-sm-3"></div>
+				<!-- group two description -->
+				<div id="description2" class="col-lg-4 col-md-3 col-sm-3"></div>
+				<!-- group three description -->
+				<div id="description3" class="col-lg-4 col-md-3 col-sm-3"></div>
+			</div>
+			<div class="row justify-content-center buttonsRow">
+				<!-- group one buttons - drawing tools -->
+				<div id="buttonGroup1" class="col-lg-4 col-md-3 col-sm-3">
+					<!-- freehand button  -->
+					<span class="button fas fa-pencil-alt" id="drawFreehand"></span>
+					<!-- paintbrush button -->
+					<span class="button fas fa-paint-brush" id="paintbrush"></span>
+					<!-- rectangle button  -->
+					<span class="button fas fa-square" id="drawRectangle"></span>
+					<!-- triangle button -->
+					<span
+						class="button fas fa-play fa-rotate-180"
+						id="drawTriangle"
+					></span>
+					<!-- circle button -->
+					<span class="button fas fa-circle" id="drawCircle"></span>
+					<!-- star button -->
+					<span class="button far fa-star" id="drawStar"></span>
+					<!-- polygon button -->
+					<span class="button fas fa-draw-polygon" id="drawPolygon"></span>
+					<!-- text button -->
+					<span class="button fas fa-font" id="text"></span>
+					<!-- straight line button -->
+					<span class="button fas fa-slash" id="line"></span>
+					<!-- text button -->
+					<span class="button" id="curveQuadratic">&nbsp;C&nbsp;</span
+					><!-- text button -->
+					<span class="button fas fa-signature" id="curveBezier"></span>
+				</div>
+				<!-- group two buttons -->
+				<div id="buttonGroup2" class="col-lg-4 col-md-3 col-sm-3">
+					<!-- bucket button -->
+					<span class="button fas fa-fill" id="bucket"></span>
+					<!-- eraser button -->
+					<span class="button fas fa-eraser" id="eraser"></span>
+					<!-- thickness button  -->
+					<span class="button fas fa-sliders-h" id="thickness"></span>
+					<!-- dropper button  -->
+					<span class="button fas fa-eye-dropper" id="dropper"></span>
+				</div>
+
+				<!-- group three buttons -->
+				<div id="buttonGroup3" class="col-lg-4 col-md-3 col-sm-3">
+					<!-- undo button  -->
+					<span class="button fas fa-undo" id="undo"></span>
+					<!-- redo button  -->
+					<span class="button fas fa-redo" id="redo"></span>
+					<!-- zoom in button  -->
+					<span class="button fas fa-search-plus" id="zoomIn"></span>
+					<!-- zoom out button  -->
+					<span class="button fas fa-search-minus" id="zoomOut"></span>
+					<!-- ruler button -->
+					<span class="button fas fa-ruler" id="ruler"></span>
+					<!-- save button -->
+					<span class="button fas fa-save" id="save"></span>
+					<!-- credits button -->
+					<span class="button fas fa-heart" id="credits"></span>
+					<div id="creditsPopup">
+						Credits: <br />
+						Color picker - <a href="https://github.com/Simonwep/pickr">pickr</a>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- JS scripts -->
@@ -62,6 +130,20 @@
 		<!-- The drawing rectangle functionality  -->
 		<script
 			src="./javascript/drawingRectangle.js"
+			type="text/javascript"
+			async
+			defer
+		></script>
+		<!-- The drawing rectangle functionality  -->
+		<script
+			src="./javascript/drawingCircle.js"
+			type="text/javascript"
+			async
+			defer
+		></script>
+		<!-- The drawing rectangle functionality  -->
+		<script
+			src="./javascript/drawingStraightLine.js"
 			type="text/javascript"
 			async
 			defer

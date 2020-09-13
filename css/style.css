@@ -4,7 +4,7 @@ body {
 }
 
 .canvas {
-	background-color: blue; /*blue for visibility*/
+	/* background-color: blue; blue for visibility */
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
@@ -19,26 +19,75 @@ body {
 #canvas-draft {
 	background-color: transparent;
 }
-
-/* buttons */
-#description {
-	display: block;
-	margin-top: 0.5vh;
-	height: 2vh;
-	margin-bottom: 1vh;
+/* description */
+.descriptionRow {
+	padding-bottom: 0;
+	margin-top: 1vh;
+}
+#description1 {
+	height: 2em;
 	font-family: "Kumbh Sans";
 	color: #000;
+	/* border: 1px solid black; */
 }
+#description2 {
+	height: 2em;
+	font-family: "Kumbh Sans";
+	color: #000;
+	/* border: 1px solid black; */
+}
+#description3 {
+	height: 2em;
+	font-family: "Kumbh Sans";
+	color: #000;
+	/* border: 1px solid black; */
+}
+
+/* buttons */
 span {
 	color: #000;
+	cursor: pointer;
 }
-.buttons {
-	display: inline-block;
+.buttonsRow {
+	padding-bottom: 0;
+	margin-top: 0.5vh;
 }
+#buttonGroup1 {
+	/* border: 1px solid black; */
+}
+#buttonGroup2 {
+	/* border: 1px solid black; */
+}
+#buttonGroup3 {
+	/* border: 1px solid black; */
+}
+
 .button {
 	color: #fff;
 	background-color: #000;
 	padding: 0.5vh;
 	border: 1px solid #000;
 	border-radius: 5px;
+}
+#text {
+	margin-right: 20px;
+}
+#curveQuadratic {
+	font-family: "Nanum Gothic";
+	font-size: 1.1em;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	font-weight: 700;
+}
+
+#save {
+	margin-right: 20px;
+}
+
+#credits {
+	display: none;
+}
+a {
+	color: #000;
+	text-decoration: none;
 }

@@ -1,9 +1,4 @@
-/**********************************************
- * Drawing Rectangle Functionality
- * ==================================
- ***********************************************/
-// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
-class DrawingRectangle extends PaintFunction {
+class DrawingCircle extends PaintFunction {
 	constructor(contextReal, contextDraft) {
 		super();
 		this.contextReal = contextReal;
@@ -12,29 +7,41 @@ class DrawingRectangle extends PaintFunction {
 
 	onMouseDown(coord, event) {
 		this.contextReal.fillStyle = "#535353";
+		this.contextReal.beginPath();
 		this.origX = coord[0];
 		this.origY = coord[1];
 	}
 	onDragging(coord, event) {
-		this.contextDraft.fillStyle = "#535353";
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-		this.contextDraft.fillRect(
+		this.contextDraft.beginPath();
+		this.contextDraft.ellipse(
 			this.origX,
 			this.origY,
-			coord[0] - this.origX,
-			coord[1] - this.origY
+			Math.abs(coord[0] - this.origX),
+			Math.abs(coord[1] - this.origY),
+			(0 * Math.PI) / 180,
+			0,
+			2 * Math.PI
 		);
+		this.contextDraft.fill();
+		this.contextDraft.stroke();
 	}
 
 	onMouseMove() {}
 	onMouseUp(coord) {
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-		this.contextReal.fillRect(
+		this.contextReal.ellipse(
 			this.origX,
 			this.origY,
-			coord[0] - this.origX,
-			coord[1] - this.origY
+			Math.abs(coord[0] - this.origX),
+			Math.abs(coord[1] - this.origY),
+			(0 * Math.PI) / 180,
+			0,
+			2 * Math.PI
 		);
+		this.contextReal.fill();
+		this.contextReal.stroke();
+		this.onFinish();
 	}
 	onMouseLeave() {}
 	onMouseEnter() {}

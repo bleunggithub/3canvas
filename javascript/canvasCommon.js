@@ -1,8 +1,8 @@
 //The canvas
-const canvasR = document.getElementById("canvas-real");
-const contextReal = canvasR.getContext("2d");
-const canvasD = document.getElementById("canvas-draft");
-const contextDraft = canvasD.getContext("2d");
+const canvasReal = document.getElementById("canvas-real");
+const contextReal = canvasReal.getContext("2d");
+const canvasDraft = document.getElementById("canvas-draft");
+const contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
 
@@ -55,57 +55,184 @@ class PaintFunction {
 }
 
 // resizing canvas to match height & width of browser
-canvasR.width = window.innerWidth;
-canvasR.height = window.innerHeight - 75;
-canvasD.width = window.innerWidth;
-canvasD.height = window.innerHeight - 75;
+canvasReal.width = window.innerWidth;
+canvasReal.height = window.innerHeight - 80;
+canvasDraft.width = window.innerWidth;
+canvasDraft.height = window.innerHeight - 80;
 
 // function description
-$("#drawRectangle").hover(
-	function () {
-		$("#description").append("<span> draw rectangle</span>");
-	},
-	function () {
-		$("#description").find("span").last().remove();
-	}
-);
-
 $("#drawFreehand").hover(
 	function () {
-		$("#description").append("<span> pencil</span>");
+		$("#description1").append("<span> pencil</span>");
 	},
 	function () {
-		$("#description").find("span").last().remove();
+		$("#description1").find("span").last().remove();
 	}
 );
-
 $("#paintbrush").hover(
 	function () {
-		$("#description").append("<span> paint brush</span>");
+		$("#description1").append("<span> paint brush</span>");
 	},
 	function () {
-		$("#description").find("span").last().remove();
+		$("#description1").find("span").last().remove();
 	}
 );
-
+$("#drawRectangle").hover(
+	function () {
+		$("#description1").append("<span> draw rectangle</span>");
+	},
+	function () {
+		$("#description1").find("span").last().remove();
+	}
+);
+$("#drawTriangle").hover(
+	function () {
+		$("#description1").append("<span> draw triangle</span>");
+	},
+	function () {
+		$("#description1").find("span").last().remove();
+	}
+);
+$("#drawCircle").hover(
+	function () {
+		$("#description1").append("<span> draw circle</span>");
+	},
+	function () {
+		$("#description1").find("span").last().remove();
+	}
+);
+$("#drawStar").hover(
+	function () {
+		$("#description1").append("<span> draw star</span>");
+	},
+	function () {
+		$("#description1").find("span").last().remove();
+	}
+);
 $("#drawPolygon").hover(
 	function () {
-		$("#description").append("<span> draw polygon</span>");
+		$("#description1").append("<span> draw polygon</span>");
 	},
 	function () {
-		$("#description").find("span").last().remove();
+		$("#description1").find("span").last().remove();
 	}
 );
-
+$("#text").hover(
+	function () {
+		$("#description1").append("<span> add text</span>");
+	},
+	function () {
+		$("#description1").find("span").last().remove();
+	}
+);
+$("#line").hover(
+	function () {
+		$("#description1").append("<span> draw straight line</span>");
+	},
+	function () {
+		$("#description1").find("span").last().remove();
+	}
+);
+$("#curveQuadratic").hover(
+	function () {
+		$("#description1").append(
+			"<span> draw quadratic curve (single control point)</span>"
+		);
+	},
+	function () {
+		$("#description1").find("span").last().remove();
+	}
+);
+$("#curveBezier").hover(
+	function () {
+		$("#description1").append(
+			"<span> draw bezier curve (multi-control points)</span>"
+		);
+	},
+	function () {
+		$("#description1").find("span").last().remove();
+	}
+);
 $("#bucket").hover(
 	function () {
-		$("#description").append("<span> bucket</span>");
+		$("#description2").append("<span> bucket</span>");
 	},
 	function () {
-		$("#description").find("span").last().remove();
+		$("#description2").find("span").last().remove();
 	}
 );
-
+$("#eraser").hover(
+	function () {
+		$("#description2").append("<span> eraser</span>");
+	},
+	function () {
+		$("#description2").find("span").last().remove();
+	}
+);
+$("#thickness").hover(
+	function () {
+		$("#description2").append("<span> thickness</span>");
+	},
+	function () {
+		$("#description2").find("span").last().remove();
+	}
+);
+$("#dropper").hover(
+	function () {
+		$("#description2").append("<span> colours</span>");
+	},
+	function () {
+		$("#description2").find("span").last().remove();
+	}
+);
+$("#undo").hover(
+	function () {
+		$("#description3").append("<span> undo</span>");
+	},
+	function () {
+		$("#description3").find("span").last().remove();
+	}
+);
+$("#redo").hover(
+	function () {
+		$("#description3").append("<span> redo</span>");
+	},
+	function () {
+		$("#description3").find("span").last().remove();
+	}
+);
+$("#zoomIn").hover(
+	function () {
+		$("#description3").append("<span> zoom in</span>");
+	},
+	function () {
+		$("#description3").find("span").last().remove();
+	}
+);
+$("#zoomOut").hover(
+	function () {
+		$("#description3").append("<span> zoom out</span>");
+	},
+	function () {
+		$("#description3").find("span").last().remove();
+	}
+);
+$("#ruler").hover(
+	function () {
+		$("#description3").append("<span> ruler</span>");
+	},
+	function () {
+		$("#description3").find("span").last().remove();
+	}
+);
+$("#save").hover(
+	function () {
+		$("#description3").append("<span> save</span>");
+	},
+	function () {
+		$("#description3").find("span").last().remove();
+	}
+);
 // implementing functions to buttons
 $(() => {
 	currentFunction = new DrawingLine(contextReal);
@@ -114,5 +241,11 @@ $(() => {
 	});
 	$("#drawFreehand").click(() => {
 		currentFunction = new DrawingLine(contextReal);
+	});
+	$("#drawCircle").click(() => {
+		currentFunction = new DrawingCircle(contextReal, contextDraft);
+	});
+	$("#line").click(() => {
+		currentFunction = new DrawingStraightLine(contextReal, contextDraft);
 	});
 });
