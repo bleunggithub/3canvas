@@ -26,6 +26,7 @@ body {
 .descriptionRow {
 	padding-bottom: 0;
 	margin-top: 1vh;
+	font-size: 0.8em;
 }
 #description1 {
 	height: 2em;
@@ -75,6 +76,11 @@ span {
 	padding-top: 1px;
 	font-weight: 700;
 }
+/* outline dropper */
+#dropperOutline {
+	background-color: #fff;
+	color: #000;
+}
 /* change padding-right */
 #text {
 	margin-right: 20px;
@@ -86,12 +92,15 @@ span {
 /* coordinates */
 .coordText {
 	margin-left: 20px;
+	padding-bottom: 10px;
 	cursor: auto;
 }
 .coord {
 	color: #919191;
 	padding: 0 20px;
 	margin-left: 3px;
+	padding-bottom: 10px;
+
 	cursor: auto;
 }
 
@@ -129,4 +138,20 @@ a {
 a:hover {
 	color: #000;
 	text-decoration: none;
+}
+
+/* picker container */
+#pickr-container-outline {
+	display: inline-block;
+	height: 25px !important ;
+	width: 25px;
+	overflow: hidden;
+	border-radius: 5px;
+}
+#pickr-container {
+	display: inline-block;
+	height: 25px !important ;
+	width: 25px;
+	overflow: hidden;
+	border-radius: 5px;
 }

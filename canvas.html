@@ -44,15 +44,15 @@
 			<!-- descriptions -->
 			<div class="row justify-content-center descriptionRow">
 				<!-- group one description - drawing tools -->
-				<div id="description1" class="col-lg-4 col-md-3 col-sm-3"></div>
+				<div id="description1" class="col-lg-6 col-md-3 col-sm-3"></div>
 				<!-- group two description -->
-				<div id="description2" class="col-lg-4 col-md-3 col-sm-3"></div>
+				<div id="description2" class="col-lg-1 col-md-3 col-sm-3"></div>
 				<!-- group three description -->
-				<div id="description3" class="col-lg-4 col-md-3 col-sm-3"></div>
+				<div id="description3" class="col-lg-5 col-md-3 col-sm-3"></div>
 			</div>
 			<div class="row justify-content-center buttonsRow">
 				<!-- group one buttons - drawing tools -->
-				<div id="buttonGroup1" class="col-lg-4 col-md-3 col-sm-3">
+				<div id="buttonGroup1" class="col-lg-6 col-md-3 col-sm-3">
 					<!-- freehand button  -->
 					<span class="button fas fa-pencil-alt" id="drawFreehand"></span>
 					<!-- paintbrush button -->
@@ -78,27 +78,29 @@
 					<span class="button" id="curveQuadratic">&nbsp;C&nbsp;</span
 					><!-- text button -->
 					<span class="button fas fa-signature" id="curveBezier"></span>
-				</div>
-				<!-- group two buttons -->
-				<div id="buttonGroup2" class="col-lg-4 col-md-3 col-sm-3">
 					<!-- bucket button -->
 					<span class="button fas fa-fill" id="bucket"></span>
 					<!-- eraser button -->
 					<span class="button fas fa-eraser" id="eraser"></span>
 					<!-- thickness button  -->
 					<span class="button fas fa-sliders-h" id="thickness"></span>
-					<!-- dropper button  -->
-					<span class="button fas fa-eye-dropper" id="dropper"></span>
-					<!-- Coordinate X  -->
-					<span class="coordText">X:</span>
-					<span class="coord" id="coordX">X </span>
-					<!-- Coordinate Y  -->
-					<span class="coordText">Y:</span>
-					<span class="coord" id="coordY">Y </span>
+				</div>
+				<!-- group two buttons -->
+				<div id="buttonGroup2" class="col-lg-1 col-md-3 col-sm-3">
+					<!-- dropper (outline color) button  -->
+					<div id="pickr-container-outline">
+						<span class="button fas fa-eye-dropper" id="dropperOutline"></span>
+					</div>
+					<!-- dropper (fill color) button  -->
+					<div id="pickr-container">
+						<span class="button fas fa-eye-dropper" id="dropper"></span>
+					</div>
 				</div>
 
 				<!-- group three buttons -->
-				<div id="buttonGroup3" class="col-lg-4 col-md-3 col-sm-3">
+				<div id="buttonGroup3" class="col-lg-5 col-md-3 col-sm-3">
+					<!-- grid button -->
+					<span class="button fas fa-border-none" id="grid"></span>
 					<!-- undo button  -->
 					<span class="button fas fa-undo" id="undo"></span>
 					<!-- redo button  -->
@@ -107,8 +109,6 @@
 					<span class="button fas fa-search-plus" id="zoomIn"></span>
 					<!-- zoom out button  -->
 					<span class="button fas fa-search-minus" id="zoomOut"></span>
-					<!-- grid button -->
-					<span class="button fas fa-border-none" id="grid"></span>
 
 					<!-- save button -->
 					<span class="button fas fa-save" id="save"></span>
@@ -124,6 +124,12 @@
 						Credits: <br />
 						Color picker - <a href="https://github.com/Simonwep/pickr">pickr</a>
 					</div>
+					<!-- Coordinate X  -->
+					<span class="coordText">X:</span>
+					<span class="coord" id="coordX">X </span>
+					<!-- Coordinate Y  -->
+					<span class="coordText">Y:</span>
+					<span class="coord" id="coordY">Y </span>
 				</div>
 			</div>
 		</div>
@@ -133,6 +139,10 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<!-- color pickr -->
 		<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+		<script src="./javascript/fillColor.js"></script>
+		<script src="./javascript/outlineColor.js"></script>
+		<!-- function description -->
+		<script src="./javascript/functionDescription.js"></script>
 		<!-- The drawing functionality  -->
 		<script
 			src="./javascript/canvasCommon.js"

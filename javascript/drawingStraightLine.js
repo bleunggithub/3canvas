@@ -5,7 +5,8 @@ class DrawingStraightLine extends PaintFunction {
 		this.contextDraft = contextDraft;
 	}
 	onMouseDown(coord) {
-		this.contextReal.fillStyle = "purple";
+		this.contextReal.strokeStyle = curStroke;
+		this.contextReal.lineWidth = 3;
 		this.origX = coord[0];
 		this.origY = coord[1];
 		this.contextReal.beginPath();
@@ -14,8 +15,9 @@ class DrawingStraightLine extends PaintFunction {
 
 	onDragging(coord) {
 		//these part are affecting the Draft Canvas//
-		this.contextDraft.fillStyle = "#f44";
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+		this.contextDraft.strokeStyle = curStroke;
+		this.contextDraft.lineWidth = 3;
 		this.contextDraft.beginPath();
 		this.contextDraft.moveTo(this.origX, this.origY);
 		this.contextDraft.lineTo(coord[0], coord[1]);
@@ -23,7 +25,8 @@ class DrawingStraightLine extends PaintFunction {
 	}
 
 	onMouseUp(coord) {
-		this.contextReal.fillStyle = "#f44";
+		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+		this.contextReal.strokeStyle = curStroke;
 		this.contextReal.lineTo(coord[0], coord[1]);
 		this.contextReal.stroke();
 	}
