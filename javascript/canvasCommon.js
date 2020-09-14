@@ -1,8 +1,11 @@
 //The canvas
 const canvasReal = document.getElementById("canvas-real");
 const contextReal = canvasReal.getContext("2d");
+const canvasGrid = document.getElementById("canvas-grid");
+const contextGrid = canvasGrid.getContext("2d");
 const canvasDraft = document.getElementById("canvas-draft");
 const contextDraft = canvasDraft.getContext("2d");
+
 let currentFunction;
 let dragging = false;
 
@@ -57,6 +60,8 @@ class PaintFunction {
 // resizing canvas to match height & width of browser
 canvasReal.width = window.innerWidth;
 canvasReal.height = window.innerHeight - 80;
+canvasGrid.width = window.innerWidth;
+canvasGrid.height = window.innerHeight - 80;
 canvasDraft.width = window.innerWidth;
 canvasDraft.height = window.innerHeight - 80;
 
@@ -217,9 +222,9 @@ $("#zoomOut").hover(
 		$("#description3").find("span").last().remove();
 	}
 );
-$("#ruler").hover(
+$("#grid").hover(
 	function () {
-		$("#description3").append("<span> ruler</span>");
+		$("#description3").append("<span> grid (50*50 pixel per grid)</span>");
 	},
 	function () {
 		$("#description3").find("span").last().remove();
@@ -248,4 +253,29 @@ $(() => {
 	$("#line").click(() => {
 		currentFunction = new DrawingStraightLine(contextReal, contextDraft);
 	});
+	$("#grid").click(() => {
+		$("#canvas-grid").toggle();
+	});
+});
+
+//credits
+function credits() {
+	var creditsBtn = document.getElementById("credits");
+	var creditsPopup = document.getElementById("creditsPopup");
+	var closeBtn = document.getElementById("closeBtn");
+
+	creditsBtn.addEventListener("click", function () {
+		creditsPopup.style.display = "block";
+		closeBtn.style.display = "block";
+	});
+}
+credits();
+
+//coordinates
+$(window).mousemove(function (event) {
+	var pageCoordX = event.clientX;
+	var pageCoordY = event.clientY;
+
+	$("#coordX").text(pageCoordX);
+	$("#coordY").text(pageCoordY);
 });

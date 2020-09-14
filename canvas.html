@@ -23,12 +23,19 @@
 			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
 			crossorigin="anonymous"
 		/>
+		<!-- color pickr 'monolith' theme-->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css"
+		/>
+
 		<!-- custom css -->
 		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 
 	<body>
 		<div id="canvas-container">
+			<canvas id="canvas-grid" class="canvas"></canvas>
 			<canvas id="canvas-real" class="canvas"></canvas>
 			<canvas id="canvas-draft" class="canvas"></canvas>
 		</div>
@@ -82,6 +89,12 @@
 					<span class="button fas fa-sliders-h" id="thickness"></span>
 					<!-- dropper button  -->
 					<span class="button fas fa-eye-dropper" id="dropper"></span>
+					<!-- Coordinate X  -->
+					<span class="coordText">X:</span>
+					<span class="coord" id="coordX">X </span>
+					<!-- Coordinate Y  -->
+					<span class="coordText">Y:</span>
+					<span class="coord" id="coordY">Y </span>
 				</div>
 
 				<!-- group three buttons -->
@@ -94,13 +107,20 @@
 					<span class="button fas fa-search-plus" id="zoomIn"></span>
 					<!-- zoom out button  -->
 					<span class="button fas fa-search-minus" id="zoomOut"></span>
-					<!-- ruler button -->
-					<span class="button fas fa-ruler" id="ruler"></span>
+					<!-- grid button -->
+					<span class="button fas fa-border-none" id="grid"></span>
+
 					<!-- save button -->
 					<span class="button fas fa-save" id="save"></span>
 					<!-- credits button -->
 					<span class="button fas fa-heart" id="credits"></span>
 					<div id="creditsPopup">
+						<span
+							onclick="this.parentElement.style.display='none'"
+							id="closeBtn"
+						>
+							&#10005;</span
+						>
 						Credits: <br />
 						Color picker - <a href="https://github.com/Simonwep/pickr">pickr</a>
 					</div>
@@ -111,6 +131,8 @@
 		<!-- JS scripts -->
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- color pickr -->
+		<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
 		<!-- The drawing functionality  -->
 		<script
 			src="./javascript/canvasCommon.js"
@@ -144,6 +166,13 @@
 		<!-- The drawing rectangle functionality  -->
 		<script
 			src="./javascript/drawingStraightLine.js"
+			type="text/javascript"
+			async
+			defer
+		></script>
+		<!-- The grid functionality  -->
+		<script
+			src="./javascript/canvas-grid.js"
 			type="text/javascript"
 			async
 			defer

@@ -14,6 +14,7 @@ class DrawingCircle extends PaintFunction {
 	onDragging(coord, event) {
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 		this.contextDraft.beginPath();
+		//ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
 		this.contextDraft.ellipse(
 			this.origX,
 			this.origY,
@@ -41,7 +42,6 @@ class DrawingCircle extends PaintFunction {
 		);
 		this.contextReal.fill();
 		this.contextReal.stroke();
-		this.onFinish();
 	}
 	onMouseLeave() {}
 	onMouseEnter() {}
