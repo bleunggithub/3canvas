@@ -89,10 +89,6 @@ $(() => {
 	$(".btn").click(() => {
 		currentFunction = new DrawingPolygon(contextReal, contextDraft);
 	});
-	$("#save").click(() => {
-		$("save").toggle();
-	});
-
 	$("#drawPolygon").click(() => {
 		currentFunction = new DrawingFreeStylePolygon(contextReal, contextDraft);
 	});
