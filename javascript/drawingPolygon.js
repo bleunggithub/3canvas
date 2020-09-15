@@ -13,10 +13,12 @@ class DrawingPolygon extends PaintFunction {
 		this.origY = coord[1];
 	}
 	onDragging(coord) {
+		let value = document.getElementById("myRange");
+		let input = value.valueAsNumber;
 		this.contextDraft.strokeStyle = curStroke;
 		this.contextDraft.fillStyle = curFill;
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-		var numberOfSides = 6;
+		var numberOfSides = input;
 		var size = Math.sqrt(
 			Math.pow(this.origX - coord[0], 2) + Math.pow(this.origY - coord[1], 2)
 		);
@@ -36,8 +38,10 @@ class DrawingPolygon extends PaintFunction {
 		this.contextDraft.fill();
 	}
 	onMouseUp(coord) {
+		let value = document.getElementById("myRange");
+		let input = value.valueAsNumber;
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-		var numberOfSides = 6;
+		var numberOfSides = input;
 		var size = Math.sqrt(
 			Math.pow(this.origX - coord[0], 2) + Math.pow(this.origY - coord[1], 2)
 		);
@@ -54,5 +58,6 @@ class DrawingPolygon extends PaintFunction {
 		this.contextReal.lineWidth = 3;
 		this.contextReal.stroke();
 		this.contextReal.fill();
+		this.contextReal.strokeStyle = curStroke;
 	}
 }

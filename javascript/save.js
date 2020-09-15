@@ -1,5 +1,4 @@
 var saveButton = document.getElementById("save");
-
 saveButton.addEventListener("click", function () {
 	var imageName = prompt("Set the image name");
 	var canvasDataURL = canvasReal.toDataURL();
