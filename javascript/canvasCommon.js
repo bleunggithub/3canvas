@@ -83,17 +83,23 @@ $(() => {
 	$("#grid").click(() => {
 		$("#canvas-grid").toggle();
 	});
+	$("#paintbrush").click(() => {
+		currentFunction = new Paintbrush(contextReal, contextDraft);
+	});
+	$("#polygonSubmit").click(() => {
+		currentFunction = new DrawingPolygon(contextReal, contextDraft);
+	});
 });
 
 //credits
 function credits() {
 	var creditsBtn = document.getElementById("credits");
 	var creditsPopup = document.getElementById("creditsPopup");
-	var closeBtn = document.getElementById("closeBtn");
+	var closeBtn2 = document.getElementById("closeBtn2");
 
 	creditsBtn.addEventListener("click", function () {
 		creditsPopup.style.display = "block";
-		closeBtn.style.display = "block";
+		closeBtn2.style.display = "block";
 	});
 }
 credits();
@@ -106,3 +112,18 @@ $(window).mousemove(function (event) {
 	$("#coordX").text(pageCoordX);
 	$("#coordY").text(pageCoordY);
 });
+
+//polygonPopup
+function polygonPopup() {
+	var polygonBtn = document.getElementById("drawPolygon");
+	var pForm = document.getElementById("polygonInput");
+	var pPopup = document.getElementById("polygonPopup");
+	var closeBtn1 = document.getElementById("closeBtn1");
+
+	polygonBtn.addEventListener("click", function () {
+		pPopup.style.display = "block";
+		pForm.style.display = "block";
+		closeBtn1.style.display = "block";
+	});
+}
+polygonPopup();

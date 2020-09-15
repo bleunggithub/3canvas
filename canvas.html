@@ -70,6 +70,20 @@
 					<span class="button far fa-star" id="drawStar"></span>
 					<!-- polygon button -->
 					<span class="button fas fa-draw-polygon" id="drawPolygon"></span>
+					<div id="polygonPopup">
+						<span
+							onclick="this.parentElement.style.display='none'"
+							class="closeBtn"
+							id="closeBtn1"
+						>
+							&#10005;</span
+						>
+						<form id="polygonInput">
+							<p>Number of Sides</p>
+							<input type="number" min="1" value="6" name="numberOfSides" />
+							<input type="submit" value="draw" id="polySubmit" />
+						</form>
+					</div>
 					<!-- text button -->
 					<span class="button fas fa-font" id="text"></span>
 					<!-- straight line button -->
@@ -117,7 +131,7 @@
 					<div id="creditsPopup">
 						<span
 							onclick="this.parentElement.style.display='none'"
-							id="closeBtn"
+							id="closeBtn2"
 						>
 							&#10005;</span
 						>
@@ -150,7 +164,13 @@
 			async
 			defer
 		></script>
-
+		<!-- The paintbrush functionality  -->
+		<script
+			src="./javascript/paintbrush.js"
+			type="text/javascript"
+			async
+			defer
+		></script>
 		<!-- The drawing line functionality  -->
 		<script
 			src="./javascript/drawingFreehand.js"
@@ -166,20 +186,28 @@
 			async
 			defer
 		></script>
-		<!-- The drawing rectangle functionality  -->
+		<!-- The drawing circle functionality  -->
 		<script
 			src="./javascript/drawingCircle.js"
 			type="text/javascript"
 			async
 			defer
 		></script>
-		<!-- The drawing rectangle functionality  -->
+		<!-- The drawing straight line functionality  -->
 		<script
 			src="./javascript/drawingStraightLine.js"
 			type="text/javascript"
 			async
 			defer
 		></script>
+		<!-- The drawing polygon functionality  -->
+		<script
+			src="./javascript/drawingPolygon.js"
+			type="text/javascript"
+			async
+			defer
+		></script>
+
 		<!-- The grid functionality  -->
 		<script
 			src="./javascript/canvas-grid.js"
