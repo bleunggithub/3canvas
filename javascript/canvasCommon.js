@@ -89,6 +89,9 @@ $(() => {
 	$(".btn").click(() => {
 		currentFunction = new DrawingPolygon(contextReal, contextDraft);
 	});
+	$("#eraser").click(() => {
+		currentFunction = new DrawingPolygon(contextReal);
+	});
 });
 
 //credits

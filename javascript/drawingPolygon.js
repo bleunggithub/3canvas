@@ -33,6 +33,7 @@ class DrawingPolygon extends PaintFunction {
 		}
 		this.contextDraft.lineWidth = 3;
 		this.contextDraft.stroke();
+		this.contextDraft.fill();
 	}
 	onMouseUp(coord) {
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
@@ -52,6 +53,6 @@ class DrawingPolygon extends PaintFunction {
 		}
 		this.contextReal.lineWidth = 3;
 		this.contextReal.stroke();
-		this.contextReal.strokeStyle = curStroke;
+		this.contextReal.fill();
 	}
 }

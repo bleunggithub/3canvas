@@ -130,7 +130,11 @@
 					<span class="button fas fa-search-minus" id="zoomOut"></span>
 
 					<!-- save button -->
-					<span class="button fas fa-save" id="save"></span>
+					<span
+						onclick="screenshot()"
+						class="button fas fa-save"
+						id="save"
+					></span>
 					<!-- credits button -->
 					<span class="button fas fa-heart" id="credits"></span>
 					<div id="creditsPopup">
@@ -216,6 +220,20 @@
 		<!-- The grid functionality  -->
 		<script
 			src="./javascript/canvas-grid.js"
+			type="text/javascript"
+			async
+			defer
+		></script>
+		<!-- The save functionality -->
+		<script
+			src="./javascript/save.js"
+			type="text/javascript"
+			async
+			defer
+		></script>
+		<!-- The eraser functionality -->
+		<script
+			src="./javascript/eraser.js"
 			type="text/javascript"
 			async
 			defer
