@@ -60,16 +60,14 @@
 					<!-- rectangle button  -->
 					<span class="button fas fa-square" id="drawRectangle"></span>
 					<!-- triangle button -->
+					<span class="button fas fa-draw-polygon" id="drawPolygon"></span>
+					<!-- circle button -->
+					<span class="button fas fa-circle" id="drawCircle"></span>
+					<!-- polygon button -->
 					<span
 						class="button fas fa-play fa-rotate-180"
 						id="drawTriangle"
 					></span>
-					<!-- circle button -->
-					<span class="button fas fa-circle" id="drawCircle"></span>
-					<!-- star button -->
-					<span class="button far fa-star" id="drawStar"></span>
-					<!-- polygon button -->
-					<span class="button fas fa-draw-polygon" id="drawPolygon"></span>
 					<div id="polygonPopup">
 						<span
 							onclick="this.parentElement.style.display='none'"
@@ -78,11 +76,18 @@
 						>
 							&#10005;</span
 						>
-						<form id="polygonInput">
-							<p>Number of Sides</p>
-							<input type="number" min="1" value="6" name="numberOfSides" />
-							<input type="submit" value="draw" id="polySubmit" />
-						</form>
+						<div id="polygonInput">
+							<input
+								type="range"
+								min="1"
+								max="10"
+								value="5"
+								class="slider"
+								id="myRange"
+							/>
+							<p id="demo"></p>
+							<button class="btn">test</button>
+						</div>
 					</div>
 					<!-- text button -->
 					<span class="button fas fa-font" id="text"></span>
