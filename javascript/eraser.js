@@ -12,8 +12,8 @@ class Eraser extends PaintFunction {
 	// On mouse down, ensure that the pen has these features
 	onMouseDown(coord, event) {
 		this.context.strokeStyle = "#ffffff";
-		this.context.lineJoin = "round";
-		this.context.lineWidth = 3;
+		this.context.lineCap = "square";
+		this.context.lineWidth = 10;
 		this.context.beginPath();
 		this.context.moveTo(coord[0], coord[1]);
 		this.draw(coord[0], coord[1]);

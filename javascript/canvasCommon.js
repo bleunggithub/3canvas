@@ -96,6 +96,9 @@ $(() => {
 	$("#drawPolygon").click(() => {
 		currentFunction = new DrawingFreeStylePolygon(contextReal, contextDraft);
 	});
+	$("#eraser").click(() => {
+		currentFunction = new Eraser(contextReal);
+	});
 });
 
 //credits
