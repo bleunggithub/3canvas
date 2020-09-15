@@ -1,242 +1,249 @@
 <!DOCTYPE html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>CANVAS</title>
-		<meta name="description" content="" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!-- font awesome -->
-		<script
-			src="https://kit.fontawesome.com/fdd79be92b.js"
-			crossorigin="anonymous"
-		></script>
-		<!-- google font -->
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css?family=Kumbh+Sans|Namum+Gothic:wght@700;800"
-		/>
-		<!-- Bootstrap core CSS -->
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-			crossorigin="anonymous"
-		/>
-		<!-- color pickr 'monolith' theme-->
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css"
-		/>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CANVAS</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/fdd79be92b.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- google font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Kumbh+Sans|Namum+Gothic:wght@700;800"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!-- color pickr 'monolith' theme-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css"
+    />
 
-		<!-- custom css -->
-		<link rel="stylesheet" href="./css/style.css" />
-	</head>
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-	<body>
-		<div id="canvas-container">
-			<canvas id="canvas-grid" class="canvas"></canvas>
-			<canvas id="canvas-real" class="canvas"></canvas>
-			<canvas id="canvas-draft" class="canvas"></canvas>
-		</div>
+  <body>
+    <div id="canvas-container">
+      <canvas id="canvas-grid" class="canvas"></canvas>
+      <canvas id="canvas-real" class="canvas"></canvas>
+      <canvas id="canvas-draft" class="canvas"></canvas>
+    </div>
 
-		<div class="textCon container-fluid">
-			<!-- descriptions -->
-			<div class="row justify-content-center descriptionRow">
-				<!-- group one description - drawing tools -->
-				<div id="description1" class="col-lg-6 col-md-3 col-sm-3"></div>
-				<!-- group two description -->
-				<div id="description2" class="col-lg-1 col-md-3 col-sm-3"></div>
-				<!-- group three description -->
-				<div id="description3" class="col-lg-5 col-md-3 col-sm-3"></div>
-			</div>
-			<div class="row justify-content-center buttonsRow">
-				<!-- group one buttons - drawing tools -->
-				<div id="buttonGroup1" class="col-lg-6 col-md-3 col-sm-3">
-					<!-- freehand button  -->
-					<span class="button fas fa-pencil-alt" id="drawFreehand"></span>
-					<!-- paintbrush button -->
-					<span class="button fas fa-paint-brush" id="paintbrush"></span>
-					<!-- rectangle button  -->
-					<span class="button fas fa-square" id="drawRectangle"></span>
-					<!-- freestyle Polygon button -->
-					<span class="button fas fa-draw-polygon" id="drawPolygon"></span>
-					<!-- circle button -->
-					<span class="button fas fa-circle" id="drawCircle"></span>
-					<!-- triangle button -->
-					<span
-						class="button fas fa-play fa-rotate-180"
-						id="drawTriangle"
-					></span>
-					<div id="polygonPopup">
-						<span
-							onclick="this.parentElement.style.display='none'"
-							class="closeBtn"
-							id="closeBtn1"
-						>
-							&#10005;</span
-						>
-						<div id="polygonInput">
-							<input
-								type="range"
-								min="1"
-								max="10"
-								value="5"
-								class="slider"
-								id="myRange"
-							/>
-							<p id="demo"></p>
-							<button class="btn">Start</button>
-						</div>
-					</div>
-					<!-- text button -->
-					<span class="button fas fa-font" id="text"></span>
-					<!-- straight line button -->
-					<span class="button fas fa-slash" id="line"></span>
-					<!-- text button -->
-					<span class="button" id="curveQuadratic">&nbsp;C&nbsp;</span
-					><!-- text button -->
-					<span class="button fas fa-signature" id="curveBezier"></span>
-					<!-- bucket button -->
-					<span class="button fas fa-fill" id="bucket"></span>
-					<!-- eraser button -->
-					<span class="button fas fa-eraser" id="eraser"></span>
-					<!-- thickness button  -->
-					<span class="button fas fa-sliders-h" id="thickness"></span>
-				</div>
-				<!-- group two buttons -->
-				<div id="buttonGroup2" class="col-lg-1 col-md-3 col-sm-3">
-					<!-- dropper (outline color) button  -->
-					<div id="pickr-container-outline">
-						<span class="button fas fa-eye-dropper" id="dropperOutline"></span>
-					</div>
-					<!-- dropper (fill color) button  -->
-					<div id="pickr-container">
-						<span class="button fas fa-eye-dropper" id="dropper"></span>
-					</div>
-				</div>
+    <div class="textCon container-fluid">
+      <!-- descriptions -->
+      <div class="row justify-content-center descriptionRow">
+        <!-- group one description - drawing tools -->
+        <div id="description1" class="col-lg-6 col-md-3 col-sm-3"></div>
+        <!-- group two description -->
+        <div id="description2" class="col-lg-1 col-md-3 col-sm-3"></div>
+        <!-- group three description -->
+        <div id="description3" class="col-lg-5 col-md-3 col-sm-3"></div>
+      </div>
+      <div class="row justify-content-center buttonsRow">
+        <!-- group one buttons - drawing tools -->
+        <div id="buttonGroup1" class="col-lg-6 col-md-3 col-sm-3">
+          <!-- freehand button  -->
+          <span class="button fas fa-pencil-alt" id="drawFreehand"></span>
+          <!-- paintbrush button -->
+          <span class="button fas fa-paint-brush" id="paintbrush"></span>
+          <!-- rectangle button  -->
+          <span class="button fas fa-square" id="drawRectangle"></span>
+          <!-- freestyle Polygon button -->
+          <span class="button fas fa-draw-polygon" id="drawPolygon"></span>
+          <!-- circle button -->
+          <span class="button fas fa-circle" id="drawCircle"></span>
+          <!-- triangle button -->
+          <span
+            class="button fas fa-play fa-rotate-180"
+            id="drawTriangle"
+          ></span>
+          <div id="polygonPopup">
+            <span
+              onclick="this.parentElement.style.display='none'"
+              class="closeBtn"
+              id="closeBtn1"
+            >
+              &#10005;</span
+            >
+            <div id="polygonInput">
+              <input
+                type="range"
+                min="1"
+                max="10"
+                value="5"
+                class="slider"
+                id="myRange"
+              />
+              <p id="demo"></p>
+              <button class="btn">Start</button>
+            </div>
+          </div>
+          <!-- text button -->
+          <span class="button fas fa-font" id="text"></span>
+          <!-- straight line button -->
+          <span class="button fas fa-slash" id="line"></span>
+          <!-- text button -->
+          <span class="button" id="curveQuadratic">&nbsp;C&nbsp;</span
+          ><!-- text button -->
+          <span class="button fas fa-signature" id="curveBezier"></span>
+          <!-- bucket button -->
+          <span class="button fas fa-fill" id="bucket"></span>
+          <!-- eraser button -->
+          <span class="button fas fa-eraser" id="eraser"></span>
+          <!-- thickness button  -->
+          <span class="button fas fa-sliders-h" id="thickness"></span>
+        </div>
+        <!-- group two buttons -->
+        <div id="buttonGroup2" class="col-lg-1 col-md-3 col-sm-3">
+          <!-- dropper (outline color) button  -->
+          <div id="pickr-container-outline">
+            <span class="button fas fa-eye-dropper" id="dropperOutline"></span>
+          </div>
+          <!-- dropper (fill color) button  -->
+          <div id="pickr-container">
+            <span class="button fas fa-eye-dropper" id="dropper"></span>
+          </div>
+        </div>
 
-				<!-- group three buttons -->
-				<div id="buttonGroup3" class="col-lg-5 col-md-3 col-sm-3">
-					<!-- grid button -->
-					<span class="button fas fa-border-none" id="grid"></span>
-					<!-- undo button  -->
-					<span class="button fas fa-undo" id="undo"></span>
-					<!-- redo button  -->
-					<span class="button fas fa-redo" id="redo"></span>
-					<!-- zoom in button  -->
-					<span class="button fas fa-search-plus" id="zoomIn"></span>
-					<!-- zoom out button  -->
-					<span class="button fas fa-search-minus" id="zoomOut"></span>
+        <!-- group three buttons -->
+        <div id="buttonGroup3" class="col-lg-5 col-md-3 col-sm-3">
+          <!-- grid button -->
+          <span class="button fas fa-border-none" id="grid"></span>
+          <!-- undo button  -->
+          <span class="button fas fa-undo" id="undo"></span>
+          <!-- redo button  -->
+          <span class="button fas fa-redo" id="redo"></span>
+          <!-- zoom in button  -->
+          <span class="button fas fa-search-plus" id="zoomIn"></span>
+          <!-- zoom out button  -->
+          <span class="button fas fa-search-minus" id="zoomOut"></span>
 
-					<!-- save button -->
-					<span
-						onclick="screenshot()"
-						class="button fas fa-save"
-						id="save"
-					></span>
-					<!-- credits button -->
-					<span class="button fas fa-heart" id="credits"></span>
-					<div id="creditsPopup">
-						<span
-							onclick="this.parentElement.style.display='none'"
-							id="closeBtn2"
-						>
-							&#10005;</span
-						>
-						Credits: <br />
-						Color picker - <a href="https://github.com/Simonwep/pickr">pickr</a>
-					</div>
-					<!-- Coordinate X  -->
-					<span class="coordText">X:</span>
-					<span class="coord" id="coordX">X </span>
-					<!-- Coordinate Y  -->
-					<span class="coordText">Y:</span>
-					<span class="coord" id="coordY">Y </span>
-				</div>
-			</div>
-		</div>
+          <!-- save button -->
+          <span
+            onclick="screenshot()"
+            class="button fas fa-save"
+            id="save"
+          ></span>
+          <!-- credits button -->
+          <span class="button fas fa-heart" id="credits"></span>
+          <div id="creditsPopup">
+            <span
+              onclick="this.parentElement.style.display='none'"
+              id="closeBtn2"
+            >
+              &#10005;</span
+            >
+            Credits: <br />
+            Color picker - <a href="https://github.com/Simonwep/pickr">pickr</a>
+          </div>
+          <!-- Coordinate X  -->
+          <span class="coordText">X:</span>
+          <span class="coord" id="coordX">X </span>
+          <!-- Coordinate Y  -->
+          <span class="coordText">Y:</span>
+          <span class="coord" id="coordY">Y </span>
+        </div>
+      </div>
+    </div>
 
-		<!-- JS scripts -->
-		<!-- jQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<!-- color pickr -->
-		<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-		<script src="./javascript/fillColor.js"></script>
-		<script src="./javascript/outlineColor.js"></script>
-		<!-- function description -->
-		<script src="./javascript/functionDescription.js"></script>
-		<!-- The drawing functionality  -->
-		<script
-			src="./javascript/canvasCommon.js"
-			type="text/javascript"
-			async
-			defer
-		></script>
-		<!-- The paintbrush functionality  -->
-		<script
-			src="./javascript/paintbrush.js"
-			type="text/javascript"
-			async
-			defer
-		></script>
-		<!-- The drawing line functionality  -->
-		<script
-			src="./javascript/drawingFreehand.js"
-			type="text/javascript"
-			async
-			defer
-		></script>
+    <!-- JS scripts -->
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- color pickr -->
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="./javascript/fillColor.js"></script>
+    <script src="./javascript/outlineColor.js"></script>
+    <!-- function description -->
+    <script src="./javascript/functionDescription.js"></script>
+    <!-- The drawing functionality  -->
+    <script
+      src="./javascript/canvasCommon.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <!-- The paintbrush functionality  -->
+    <script
+      src="./javascript/paintbrush.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <!-- The drawing line functionality  -->
+    <script
+      src="./javascript/drawingFreehand.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
 
-		<!-- The drawing rectangle functionality  -->
-		<script
-			src="./javascript/drawingRectangle.js"
-			type="text/javascript"
-			async
-			defer
-		></script>
-		<!-- The drawing circle functionality  -->
-		<script
-			src="./javascript/drawingCircle.js"
-			type="text/javascript"
-			async
-			defer
-		></script>
-		<!-- The drawing straight line functionality  -->
-		<script
-			src="./javascript/drawingStraightLine.js"
-			type="text/javascript"
-			async
-			defer
-		></script>
-		<!-- The drawing regular polygon functionality  -->
-		<script
-			src="./javascript/drawingPolygon.js"
-			type="text/javascript"
-			async
-			defer
-		></script>
+    <!-- The drawing rectangle functionality  -->
+    <script
+      src="./javascript/drawingRectangle.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <!-- The drawing circle functionality  -->
+    <script
+      src="./javascript/drawingCircle.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <!-- The drawing straight line functionality  -->
+    <script
+      src="./javascript/drawingStraightLine.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <!-- The drawing regular polygon functionality  -->
+    <script
+      src="./javascript/drawingPolygon.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
 
-		<!-- The grid functionality  -->
-		<script
-			src="./javascript/canvas-grid.js"
-			type="text/javascript"
-			async
-			defer
-		></script>
-		<!-- The save functionality -->
-		<script
-			src="./javascript/save.js"
-			type="text/javascript"
-			async
-			defer
-		></script>
-		<!-- The eraser functionality -->
-		<script
-			src="./javascript/eraser.js"
-			type="text/javascript"
-			async
-			defer
-		></script>
-	</body>
+    <!-- The grid functionality  -->
+    <script
+      src="./javascript/canvas-grid.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <!-- The save functionality -->
+    <script
+      src="./javascript/save.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <!-- The eraser functionality -->
+    <script
+      src="./javascript/eraser.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <!-- The drawFreeStylePolygon functionality -->
+    <script
+      src="./javascript/drawingFreeStylePolygon.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+  </body>
 </html>
