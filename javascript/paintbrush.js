@@ -1,17 +1,13 @@
 // to use the .shadowblur method we have to take a snapshot of the stroke (using toDataURL()) and
 // push it into an array after drawn, otherwise all other items drawn will be affected by the shadow
 
-// cPush, cPushArray, cStep are defined in canvasCommon.js
-
 class Paintbrush extends PaintFunction {
-	// This class extends the PaintFunction class
 	constructor(contextReal, contextDraft) {
 		super();
 		this.contextDraft = contextDraft;
 		this.contextReal = contextReal;
 	}
 
-	// On mouse down, ensure that the pen has these features
 	onMouseDown(coord, event) {
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 		this.contextDraft.strokeStyle = curStroke;
@@ -36,6 +32,7 @@ class Paintbrush extends PaintFunction {
 			contextReal.drawImage(snapshot, 0, 0);
 			contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 			cPush();
+			// console.log(cPushArray);
 		};
 		//reset shadow blur on canvasDraft
 		this.contextDraft.shadowBlur = 0;

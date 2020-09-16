@@ -29,6 +29,8 @@ class DrawingStraightLine extends PaintFunction {
 		this.contextReal.strokeStyle = curStroke;
 		this.contextReal.lineTo(coord[0], coord[1]);
 		this.contextReal.stroke();
+		cPush();
+		// console.log(cPushArray);
 	}
 	onMouseLeave() {}
 	onMouseEnter() {}

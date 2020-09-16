@@ -126,7 +126,9 @@ $("#pickr-container-outline").hover(
 );
 $("#undo").hover(
 	function () {
-		$("#description3").append("<span> undo</span>");
+		$("#description3").append(
+			"<span> undo - click on the canvas to undo</span > "
+		);
 	},
 	function () {
 		$("#description3").find("span").last().remove();
@@ -134,7 +136,9 @@ $("#undo").hover(
 );
 $("#redo").hover(
 	function () {
-		$("#description3").append("<span> redo</span>");
+		$("#description3").append(
+			"<span> redo - click on the canvas to redo</span>"
+		);
 	},
 	function () {
 		$("#description3").find("span").last().remove();

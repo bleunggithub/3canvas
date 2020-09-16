@@ -59,5 +59,7 @@ class DrawingPolygon extends PaintFunction {
 		this.contextReal.stroke();
 		this.contextReal.fill();
 		this.contextReal.strokeStyle = curStroke;
+		cPush();
+		// console.log(cPushArray);
 	}
 }

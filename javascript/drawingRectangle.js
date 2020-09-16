@@ -51,6 +51,8 @@ class DrawingRectangle extends PaintFunction {
 			coord[0] - this.origX,
 			coord[1] - this.origY
 		);
+		cPush();
+		// console.log(cPushArray);
 	}
 	onMouseLeave() {}
 	onMouseEnter() {}

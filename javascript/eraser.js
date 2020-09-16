@@ -20,6 +20,8 @@ class Eraser extends PaintFunction {
 	}
 	onDragging(coord, event) {
 		this.draw(coord[0], coord[1]);
+		cPush();
+		// console.log(cPushArray);
 	}
 
 	onMouseMove() {}

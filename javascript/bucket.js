@@ -10,6 +10,8 @@ class Bucket extends PaintFunction {
 	onMouseMove() {}
 	onMouseUp(coord, event) {
 		toBucket(coord, this.contextReal);
+		cPush();
+		// console.log(cPushArray);
 	}
 	onMouseLeave() {}
 	onMouseEnter() {}
@@ -26,6 +28,7 @@ function toBucket(coord, context) {
 	var imgData = context.getImageData(0, 0, canvasWidth, canvasHeight);
 
 	var pixelData = context.getImageData(coord[0], coord[1], 1, 1);
+	console.log(pixelData);
 	var pixelStack = [coord];
 
 	var startR = pixelData.data[0];

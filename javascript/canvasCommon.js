@@ -105,12 +105,12 @@ $(() => {
 	$("#grid").click(() => {
 		$("#canvas-grid").toggle();
 	});
-	// $("#undo").click(() => {
-	// 	currentFunction = new Undo(contextReal, contextDraft);
-	// });
-	// $("#redo").click(() => {
-	// 	currentFunction = new Redo(contextReal, contextDraft);
-	// });
+	$("#undo").click(() => {
+		currentFunction = new Undo(contextReal, contextDraft);
+	});
+	$("#redo").click(() => {
+		currentFunction = new Redo(contextReal, contextDraft);
+	});
 });
 
 //credits

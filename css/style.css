@@ -69,13 +69,13 @@ span {
 	border: 1px solid #000;
 	border-radius: 5px;
 }
-#curveQuadratic {
+/* #curveQuadratic {
 	font-family: "Nanum Gothic";
 	font-size: 1.1em;
 	padding-bottom: 2px;
 	padding-top: 3px;
 	font-weight: 700;
-}
+} */
 /* outline dropper */
 #dropperOutline {
 	background-color: #fff;
