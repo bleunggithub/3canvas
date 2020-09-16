@@ -89,6 +89,10 @@ $(() => {
 	$("#line").click(() => {
 		currentFunction = new DrawingStraightLine(contextReal, contextDraft);
 	});
+	$("#curveQuadratic").click(() => {
+		currentFunction = new DrawQcurve(contextReal);
+	});
+
 	$("#eraser").click(() => {
 		currentFunction = new Eraser(contextReal);
 	});
