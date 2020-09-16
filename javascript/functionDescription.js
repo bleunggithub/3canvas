@@ -39,17 +39,10 @@ $("#drawCircle").hover(
 		$("#description1").find("span").last().remove();
 	}
 );
-$("#drawStar").hover(
-	function () {
-		$("#description1").append("<span> draw star</span>");
-	},
-	function () {
-		$("#description1").find("span").last().remove();
-	}
-);
+
 $("#drawPolygon").hover(
 	function () {
-		$("#description1").append("<span> draw polygon</span>");
+		$("#description1").append("<span> draw polygon (freehand)</span>");
 	},
 	function () {
 		$("#description1").find("span").last().remove();

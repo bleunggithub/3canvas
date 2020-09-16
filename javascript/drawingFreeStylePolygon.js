@@ -2,10 +2,12 @@ class DrawingFreeStylePolygon extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();
     this.contextReal = contextReal;
-    // this.contextDraft = contextDraft;
+    //this.contextDraft = contextDraft;
     this.clickNum = 0;
     this.finished = false;
     this.fillOutput = [];
+    this.contextReal.fillStyle = curFill;
+    this.contextReal.strokeStyle = curStroke;
   }
   onMouseDown(coord) {
     if (this.clickNum === 0) {
@@ -24,13 +26,8 @@ class DrawingFreeStylePolygon extends PaintFunction {
       coord[1] > this.realOrigY - 10
     ) {
       this.contextReal.lineTo(this.realOrigX, this.realOrigY);
-      if (fillBox.checked) {
-        contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-        this.output();
-      } else {
-        contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-        this.contextReal.stroke();
-      }
+      contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+      this.output();
       this.origX = this.realOrigX;
       this.origY = this.realOrigY;
       this.finished = true;
@@ -40,6 +37,7 @@ class DrawingFreeStylePolygon extends PaintFunction {
       this.realOrigY !== coord[1]
     ) {
       this.onMouseMove(coord);
+      contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextReal.beginPath();
       this.contextReal.moveTo(this.origX, this.origY);
       this.contextReal.lineTo(coord[0], coord[1]);
@@ -59,16 +57,12 @@ class DrawingFreeStylePolygon extends PaintFunction {
       contextDraft.beginPath();
       contextDraft.moveTo(this.origX, this.origY);
       contextDraft.lineTo(coord[0], coord[1]);
-      if (fillBox.checked) {
-        contextDraft.stroke();
-        contextDraft.fill();
-      } else {
-        contextDraft.stroke();
-      }
+      contextDraft.strokeStyle = curStroke;
+      contextDraft.stroke();
     } else if (this.finished == true) {
       contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.clickNum = 0;
-      currentFunction = new DrawingDyPoly(contextReal);
+      currentFunction = new DrawingFreeStylePolygon(contextReal);
       console.log("finished");
     }
   }
@@ -76,13 +70,14 @@ class DrawingFreeStylePolygon extends PaintFunction {
   onMouseLeave() {}
   onMouseEnter() {}
   output() {
-    var point = this.fillOutput.length;
-    this.contextReal.moveTo(this.fillOutput[0][0], this.fillOutput[0][1]);
+    let point = this.fillOutput.length;
+    let region = new Path2D();
+    region.moveTo(this.fillOutput[0][0], this.fillOutput[0][1]);
     for (let i = 1; i < point; i++) {
-      this.contextReal.lineTo(this.fillOutput[i][0], this.fillOutput[i][1]);
+      region.lineTo(this.fillOutput[i][0], this.fillOutput[i][1]);
     }
-    this.contextReal.closePath();
-    this.contextReal.fill();
-    this.contextReal.stroke();
+    region.closePath();
+    this.contextReal.stroke(region);
+    this.contextReal.fill(region);
   }
 }

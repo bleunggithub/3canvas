@@ -68,11 +68,20 @@ canvasDraft.height = window.innerHeight - 80;
 // implementing functions to buttons
 $(() => {
 	currentFunction = new DrawingLine(contextReal);
+	$("#drawFreehand").click(() => {
+		currentFunction = new DrawingLine(contextReal);
+	});
+	$("#paintbrush").click(() => {
+		currentFunction = new Paintbrush(contextReal, contextDraft);
+	});
 	$("#drawRectangle").click(() => {
 		currentFunction = new DrawingRectangle(contextReal, contextDraft);
 	});
-	$("#drawFreehand").click(() => {
-		currentFunction = new DrawingLine(contextReal);
+	$("#drawPolygon").click(() => {
+		currentFunction = new DrawingFreeStylePolygon(contextReal, contextDraft);
+	});
+	$(".btn").click(() => {
+		currentFunction = new DrawingPolygon(contextReal, contextDraft);
 	});
 	$("#drawCircle").click(() => {
 		currentFunction = new DrawingCircle(contextReal, contextDraft);
@@ -80,20 +89,11 @@ $(() => {
 	$("#line").click(() => {
 		currentFunction = new DrawingStraightLine(contextReal, contextDraft);
 	});
-	$("#grid").click(() => {
-		$("#canvas-grid").toggle();
-	});
-	$("#paintbrush").click(() => {
-		currentFunction = new Paintbrush(contextReal, contextDraft);
-	});
-	$(".btn").click(() => {
-		currentFunction = new DrawingPolygon(contextReal, contextDraft);
-	});
-	$("#drawPolygon").click(() => {
-		currentFunction = new DrawingFreeStylePolygon(contextReal, contextDraft);
-	});
 	$("#eraser").click(() => {
 		currentFunction = new Eraser(contextReal);
+	});
+	$("#grid").click(() => {
+		$("#canvas-grid").toggle();
 	});
 });
 
