@@ -96,6 +96,9 @@ $(() => {
 	$("#curveBezier").click(() => {
 		currentFunction = new DrawBcurve(contextReal);
 	});
+	$("#bucket").click(() => {
+		currentFunction = new Bucket(contextReal);
+	});
 	$("#eraser").click(() => {
 		currentFunction = new Eraser(contextReal);
 	});
@@ -134,7 +137,7 @@ $(window).mousemove(function (event) {
 
 //polygonPopup
 function polygonPopup() {
-	var polygonBtn = document.getElementById("drawTriangle");
+	var polygonBtn = document.getElementById("drawPolygonFixed");
 	var pForm = document.getElementById("polygonInput");
 	var pPopup = document.getElementById("polygonPopup");
 	var closeBtn1 = document.getElementById("closeBtn1");

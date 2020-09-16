@@ -23,7 +23,7 @@ $("#drawRectangle").hover(
 		$("#description1").find("span").last().remove();
 	}
 );
-$("#drawTriangle").hover(
+$("#drawPolygonFixed").hover(
 	function () {
 		$("#description1").append("<span> draw polygon (fixed)</span>");
 	},

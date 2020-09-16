@@ -35,8 +35,8 @@
 
 	<body>
 		<div id="canvas-container">
-			<canvas id="canvas-grid" class="canvas"></canvas>
 			<canvas id="canvas-real" class="canvas"></canvas>
+			<canvas id="canvas-grid" class="canvas"></canvas>
 			<canvas id="canvas-draft" class="canvas"></canvas>
 		</div>
 
@@ -61,10 +61,10 @@
 					<span class="button fas fa-square" id="drawRectangle"></span>
 					<!-- freestyle Polygon button -->
 					<span class="button fas fa-draw-polygon" id="drawPolygon"></span>
-					<!-- triangle button -->
+					<!-- fixed Polygon button -->
 					<span
 						class="button fas fa-play fa-rotate-180"
-						id="drawTriangle"
+						id="drawPolygonFixed"
 					></span>
 					<div id="polygonPopup">
 						<span
@@ -255,6 +255,13 @@
 		<!-- The drawBcurve functionality -->
 		<script
 			src="./javascript/drawingBcurve.js"
+			type="text/javascript"
+			async
+			defer
+		></script>
+		<!-- The bucket functionality -->
+		<script
+			src="./javascript/bucket.js"
 			type="text/javascript"
 			async
 			defer

@@ -72,8 +72,8 @@ span {
 #curveQuadratic {
 	font-family: "Nanum Gothic";
 	font-size: 1.1em;
-	padding-bottom: 1px;
-	padding-top: 1px;
+	padding-bottom: 2px;
+	padding-top: 3px;
 	font-weight: 700;
 }
 /* outline dropper */
