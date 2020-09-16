@@ -77,7 +77,7 @@ $("#curveQuadratic").hover(
 $("#curveBezier").hover(
 	function () {
 		$("#description1").append(
-			"<span> draw bezier curve (multi-control points)</span>"
+			"<span> draw bezier curve (double control points)</span>"
 		);
 	},
 	function () {

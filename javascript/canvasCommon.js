@@ -68,6 +68,7 @@ canvasDraft.height = window.innerHeight - 80;
 // implementing functions to buttons
 $(() => {
 	currentFunction = new DrawingLine(contextReal);
+
 	$("#drawFreehand").click(() => {
 		currentFunction = new DrawingLine(contextReal);
 	});
@@ -92,13 +93,21 @@ $(() => {
 	$("#curveQuadratic").click(() => {
 		currentFunction = new DrawQcurve(contextReal);
 	});
-
+	$("#curveBezier").click(() => {
+		currentFunction = new DrawBcurve(contextReal);
+	});
 	$("#eraser").click(() => {
 		currentFunction = new Eraser(contextReal);
 	});
 	$("#grid").click(() => {
 		$("#canvas-grid").toggle();
 	});
+	// $("#undo").click(() => {
+	// 	currentFunction = new Undo(contextReal, contextDraft);
+	// });
+	// $("#redo").click(() => {
+	// 	currentFunction = new Redo(contextReal, contextDraft);
+	// });
 });
 
 //credits
@@ -147,3 +156,15 @@ output.innerHTML = slider.value; // Display the default slider value
 slider.oninput = function () {
 	output.innerHTML = this.value;
 };
+
+//undo, redo, paintbrush
+let cPushArray = new Array();
+let cStep = -1;
+
+function cPush() {
+	cStep++;
+	if (cStep < cPushArray.length) {
+		cPushArray.length = cStep;
+	}
+	cPushArray.push(canvasReal.toDataURL());
+}

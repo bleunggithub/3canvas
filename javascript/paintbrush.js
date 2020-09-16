@@ -1,20 +1,11 @@
-let cPushArray = new Array();
-let cStep = -1;
-
-function cPush() {
-	cStep++;
-	if (cStep < cPushArray.length) {
-		cPushArray.length = cStep;
-	}
-	cPushArray.push(canvasReal.toDataURL());
-}
-
 // to use the .shadowblur method we have to take a snapshot of the stroke (using toDataURL()) and
 // push it into an array after drawn, otherwise all other items drawn will be affected by the shadow
 
+// cPush, cPushArray, cStep are defined in canvasCommon.js
+
 class Paintbrush extends PaintFunction {
 	// This class extends the PaintFunction class
-	constructor(contextBlur) {
+	constructor(contextReal, contextDraft) {
 		super();
 		this.contextDraft = contextDraft;
 		this.contextReal = contextReal;
