@@ -15,6 +15,22 @@ $("#paintbrush").hover(
 		$("#description1").find("span").last().remove();
 	}
 );
+$("#sprayPaint").hover(
+	function () {
+		$("#description1").append("<span> spray paint</span>");
+	},
+	function () {
+		$("#description1").find("span").last().remove();
+	}
+);
+$("#geo").hover(
+	function () {
+		$("#description1").append("<span> geometic lines</span>");
+	},
+	function () {
+		$("#description1").find("span").last().remove();
+	}
+);
 $("#drawRectangle").hover(
 	function () {
 		$("#description1").append("<span> draw rectangle</span>");
@@ -94,10 +110,10 @@ $("#bucket").hover(
 );
 $("#eraser").hover(
 	function () {
-		$("#description1").append("<span> eraser</span>");
+		$("#description3").append("<span> eraser</span>");
 	},
 	function () {
-		$("#description1").find("span").last().remove();
+		$("#description3").find("span").last().remove();
 	}
 );
 $("#thickness").hover(

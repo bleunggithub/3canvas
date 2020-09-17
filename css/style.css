@@ -81,8 +81,8 @@ span {
 	background-color: #fff;
 	color: #000;
 }
-/* change padding-right */
-#text {
+/* group icons together (change padding-right) */
+#geo {
 	margin-right: 20px;
 }
 #curveQuadratic {
@@ -98,7 +98,9 @@ span {
 #drawPolygon {
 	margin-right: 20px;
 }
-
+#text {
+	margin-right: 20px;
+}
 #redo {
 	margin-right: 20px;
 }

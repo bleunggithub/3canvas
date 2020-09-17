@@ -75,6 +75,9 @@ $(() => {
 	$("#paintbrush").click(() => {
 		currentFunction = new Paintbrush(contextReal, contextDraft);
 	});
+	$("#sprayPaint").click(() => {
+		currentFunction = new SprayPaint(contextReal, contextDraft);
+	});
 	$("#drawRectangle").click(() => {
 		currentFunction = new DrawingRectangle(contextReal, contextDraft);
 	});
@@ -167,7 +170,7 @@ slider.oninput = function () {
 	output.innerHTML = this.value;
 };
 
-//undo, redo, paintbrush
+//undo, redo
 let cPushArray = new Array();
 let cStep = -1;
 
@@ -187,3 +190,14 @@ const zoomOut = document.getElementById("zoomOut");
 
 zoomIn.addEventListener("click", panzoom.zoomIn);
 zoomOut.addEventListener("click", panzoom.zoomOut);
+
+//variable for paintbrushes
+var isDrawing;
+var density = 10;
+var clientX, clientY, timeout;
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min) + 1) + min;
+}
+function getRandomFloat(min, max) {
+	return Math.random() * (max - min) + min;
+}
