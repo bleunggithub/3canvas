@@ -85,6 +85,21 @@ span {
 #text {
 	margin-right: 20px;
 }
+#curveBezier {
+	margin-right: 20px;
+}
+#drawPolygon {
+	margin-right: 20px;
+}
+#grid {
+	margin-right: 20px;
+}
+#redo {
+	margin-right: 20px;
+}
+#zoomOut {
+	margin-right: 20px;
+}
 #save {
 	margin-right: 20px;
 }

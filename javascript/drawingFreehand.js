@@ -1,7 +1,3 @@
-/**********************************************
- * Drawing Line Functionality
- * ==================================
- ***********************************************/
 class DrawingLine extends PaintFunction {
 	// This class extends the PaintFunction class
 	constructor(contextReal) {
@@ -13,6 +9,7 @@ class DrawingLine extends PaintFunction {
 	onMouseDown(coord, event) {
 		this.context.strokeStyle = curStroke;
 		this.context.lineJoin = "round";
+		this.context.lineCap = "round";
 		this.context.lineWidth = 3;
 		this.context.beginPath();
 		this.context.moveTo(coord[0], coord[1]);
@@ -20,12 +17,19 @@ class DrawingLine extends PaintFunction {
 	}
 	onDragging(coord, event) {
 		this.draw(coord[0], coord[1]);
-		cPush();
-		// console.log(cPushArray);
 	}
 
 	onMouseMove() {}
-	onMouseUp() {}
+	onMouseUp(coord, event) {
+		//taking a snapshot on mouseup instead of counting each turn as individual unit
+		// so that the line isn't broken into pieces when undo/redo
+		let canvasPic = new Image();
+		canvasPic.src = canvasReal.toDataURL();
+		canvasPic.onload = function () {
+			contextReal.drawImage(canvasPic, 0, 0);
+			cPush();
+		};
+	}
 	onMouseLeave() {}
 	onMouseEnter() {}
 

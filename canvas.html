@@ -44,23 +44,29 @@
 			<!-- descriptions -->
 			<div class="row justify-content-center descriptionRow">
 				<!-- group one description - drawing tools -->
-				<div id="description1" class="col-lg-6 col-md-3 col-sm-3"></div>
+				<div id="description1" class="col-lg-5 col-md-3 col-sm-3"></div>
 				<!-- group two description -->
 				<div id="description2" class="col-lg-1 col-md-3 col-sm-3"></div>
 				<!-- group three description -->
-				<div id="description3" class="col-lg-5 col-md-3 col-sm-3"></div>
+				<div id="description3" class="col-lg-6 col-md-3 col-sm-3"></div>
 			</div>
 			<div class="row justify-content-center buttonsRow">
 				<!-- group one buttons - drawing tools -->
-				<div id="buttonGroup1" class="col-lg-6 col-md-3 col-sm-3">
+				<div id="buttonGroup1" class="col-lg-5 col-md-3 col-sm-3">
 					<!-- freehand button  -->
 					<span class="button fas fa-pencil-alt" id="drawFreehand"></span>
 					<!-- paintbrush button -->
 					<span class="button fas fa-paint-brush" id="paintbrush"></span>
+					<!-- straight line button -->
+					<span class="button fas fa-slash" id="line"></span>
+					<!-- qCurve button -->
+					<span class="button fab fa-confluence" id="curveQuadratic"></span
+					><!-- bCurve button -->
+					<span class="button fas fa-signature" id="curveBezier"></span>
 					<!-- rectangle button  -->
 					<span class="button fas fa-square" id="drawRectangle"></span>
-					<!-- freestyle Polygon button -->
-					<span class="button fas fa-draw-polygon" id="drawPolygon"></span>
+					<!-- circle button -->
+					<span class="button fas fa-circle" id="drawCircle"></span>
 					<!-- fixed Polygon button -->
 					<span
 						class="button fas fa-play fa-rotate-180"
@@ -87,20 +93,13 @@
 							<button class="btn">Start</button>
 						</div>
 					</div>
-					<!-- circle button -->
-					<span class="button fas fa-circle" id="drawCircle"></span>
+					<!-- freehand Polygon button -->
+					<span class="button fas fa-draw-polygon" id="drawPolygon"></span>
 					<!-- text button -->
 					<span class="button fas fa-font" id="text"></span>
-					<!-- straight line button -->
-					<span class="button fas fa-slash" id="line"></span>
-					<!-- text button -->
-					<span class="button fab fa-confluence" id="curveQuadratic"></span
-					><!-- text button -->
-					<span class="button fas fa-signature" id="curveBezier"></span>
 					<!-- bucket button -->
 					<span class="button fas fa-fill" id="bucket"></span>
-					<!-- eraser button -->
-					<span class="button fas fa-eraser" id="eraser"></span>
+
 					<!-- thickness button  -->
 					<span class="button fas fa-sliders-h" id="thickness"></span>
 				</div>
@@ -117,9 +116,11 @@
 				</div>
 
 				<!-- group three buttons -->
-				<div id="buttonGroup3" class="col-lg-5 col-md-3 col-sm-3">
+				<div id="buttonGroup3" class="col-lg-6 col-md-3 col-sm-3">
 					<!-- grid button -->
 					<span class="button fas fa-border-none" id="grid"></span>
+					<!-- eraser button -->
+					<span class="button fas fa-eraser" id="eraser"></span>
 					<!-- undo button  -->
 					<span class="button fas fa-undo" id="undo"></span>
 					<!-- redo button  -->
@@ -144,8 +145,11 @@
 						>
 							&#10005;</span
 						>
-						Credits: <br />
-						Color picker - <a href="https://github.com/Simonwep/pickr">pickr</a>
+						<br />
+						Color picker -
+						<a href="https://github.com/Simonwep/pickr">pickr</a><br />
+						Zoom in & Out -
+						<a href="https://github.com/timmywil/panzoom">panzoom</a>
 					</div>
 					<!-- Coordinate X  -->
 					<span class="coordText">X:</span>
@@ -280,5 +284,7 @@
 			async
 			defer
 		></script>
+		<!-- panzoom -->
+		<script src="./panzoom/panzoom.js"></script>
 	</body>
 </html>

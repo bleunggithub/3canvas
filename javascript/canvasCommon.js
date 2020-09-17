@@ -171,3 +171,12 @@ function cPush() {
 	}
 	cPushArray.push(canvasReal.toDataURL());
 }
+
+//panzoom
+const elem = document.getElementById("canvas-real");
+const panzoom = Panzoom(elem);
+const zoomIn = document.getElementById("zoomIn");
+const zoomOut = document.getElementById("zoomOut");
+
+zoomIn.addEventListener("click", panzoom.zoomIn);
+zoomOut.addEventListener("click", panzoom.zoomOut);
