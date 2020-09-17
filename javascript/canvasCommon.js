@@ -111,6 +111,9 @@ $(() => {
 	$("#redo").click(() => {
 		currentFunction = new Redo(contextReal, contextDraft);
 	});
+	$("#text").click(() => {
+		currentFunction = new Text(contextReal);
+	});
 });
 
 //credits
