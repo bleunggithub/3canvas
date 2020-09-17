@@ -12,9 +12,10 @@ class Paintbrush extends PaintFunction {
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 		this.contextDraft.strokeStyle = curStroke;
 		this.contextDraft.lineJoin = "round";
+		this.contextDraft.lineCap = "round";
 		this.contextDraft.shadowColor = curStroke;
-		this.contextDraft.shadowBlur = 5;
-		this.contextDraft.lineWidth = 1;
+		this.contextDraft.shadowBlur = 10;
+		this.contextDraft.lineWidth = curThick;
 		this.contextDraft.beginPath();
 		this.contextDraft.moveTo(coord[0], coord[1]);
 		this.draw(coord[0], coord[1], this.contextDraft);

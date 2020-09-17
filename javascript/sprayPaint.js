@@ -17,7 +17,7 @@ class SprayPaint extends PaintFunction {
 	onDragging(coord, event) {
 		if (isDrawing) {
 			for (var i = density; i--; ) {
-				var radius = 10;
+				var radius = curThick;
 				var offsetX = getRandomInt(-radius, radius);
 				var offsetY = getRandomInt(-radius, radius);
 				this.contextDraft.fillRect(
@@ -41,7 +41,6 @@ class SprayPaint extends PaintFunction {
 			contextReal.drawImage(snapshot, 0, 0);
 			contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 			cPush();
-			console.log(cPushArray);
 		};
 	}
 	onMouseLeave() {}

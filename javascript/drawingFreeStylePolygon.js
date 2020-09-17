@@ -8,6 +8,7 @@ class DrawingFreeStylePolygon extends PaintFunction {
 		this.fillOutput = [];
 		this.contextReal.fillStyle = curFill;
 		this.contextReal.strokeStyle = curStroke;
+		this.contextReal.lineWidth = curThick;
 	}
 	onMouseDown(coord) {
 		if (this.clickNum === 0) {
@@ -58,11 +59,16 @@ class DrawingFreeStylePolygon extends PaintFunction {
 			contextDraft.moveTo(this.origX, this.origY);
 			contextDraft.lineTo(coord[0], coord[1]);
 			contextDraft.strokeStyle = curStroke;
+			contextDraft.lineWidth = curThick;
+
 			contextDraft.stroke();
 		} else if (this.finished == true) {
 			contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 			this.clickNum = 0;
 			currentFunction = new DrawingFreeStylePolygon(contextReal);
+			this.contextReal.fillStyle = curFill;
+			this.contextReal.strokeStyle = curStroke;
+			this.contextReal.lineWidth = curThick;
 			console.log("finished");
 			cPush();
 			// console.log(cPushArray);

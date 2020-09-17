@@ -44,15 +44,17 @@
 			<!-- descriptions -->
 			<div class="row justify-content-center descriptionRow">
 				<!-- group one description - drawing tools -->
-				<div id="description1" class="col-lg-5 col-md-3 col-sm-3"></div>
+				<div id="description1" class="col-lg-4 col-md-3 col-sm-3"></div>
+				<!-- thickness description -->
+				<div id="descriptionT" class="col-lg-2 col-md-3 col-sm-3"></div>
 				<!-- group two description -->
 				<div id="description2" class="col-lg-1 col-md-3 col-sm-3"></div>
 				<!-- group three description -->
-				<div id="description3" class="col-lg-6 col-md-3 col-sm-3"></div>
+				<div id="description3" class="col-lg-5 col-md-3 col-sm-3"></div>
 			</div>
 			<div class="row justify-content-center buttonsRow">
 				<!-- group one buttons - drawing tools -->
-				<div id="buttonGroup1" class="col-lg-5 col-md-3 col-sm-3">
+				<div id="buttonGroup1" class="col-lg-4 col-md-3 col-sm-3">
 					<!-- freehand button  -->
 					<span class="button fas fa-pencil-alt" id="drawFreehand"></span>
 					<!-- paintbrush button -->
@@ -102,11 +104,25 @@
 					<span class="button fas fa-draw-polygon" id="drawPolygon"></span>
 					<!-- text button -->
 					<span class="button fas fa-font" id="text"></span>
+				</div>
+				<!-- thickness description -->
+				<div id="buttonT" class="col-lg-2 col-md-3 col-sm-3">
 					<!-- bucket button -->
 					<span class="button fas fa-fill" id="bucket"></span>
 
 					<!-- thickness button  -->
-					<span class="button fas fa-sliders-h" id="thickness"></span>
+					<!-- <span class="button fas fa-sliders-h" id="thickness"></span> -->
+					<div id="thicknessInput">
+						<input
+							type="range"
+							min="1"
+							step="3"
+							max="25"
+							value="4"
+							class="slider"
+							id="thickRange"
+						/>
+					</div>
 				</div>
 				<!-- group two buttons -->
 				<div id="buttonGroup2" class="col-lg-1 col-md-3 col-sm-3">
@@ -121,7 +137,7 @@
 				</div>
 
 				<!-- group three buttons -->
-				<div id="buttonGroup3" class="col-lg-6 col-md-3 col-sm-3">
+				<div id="buttonGroup3" class="col-lg-5 col-md-3 col-sm-3">
 					<!-- eraser button -->
 					<span class="button fas fa-eraser" id="eraser"></span>
 					<!-- undo button  -->

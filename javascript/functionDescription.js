@@ -66,10 +66,12 @@ $("#drawPolygon").hover(
 );
 $("#text").hover(
 	function () {
-		$("#description1").append("<span> add text</span>");
+		$("#description1").addClass("text-right");
+		$("#description1").append("<span> add text&emsp;&emsp;</span>");
 	},
 	function () {
 		$("#description1").find("span").last().remove();
+		$("#description1").removeClass("text-right");
 	}
 );
 $("#line").hover(
@@ -102,10 +104,19 @@ $("#curveBezier").hover(
 );
 $("#bucket").hover(
 	function () {
-		$("#description1").append("<span> bucket</span>");
+		$("#descriptionT").append("<span> bucket</span>");
 	},
 	function () {
-		$("#description1").find("span").last().remove();
+		$("#descriptionT").find("span").last().remove();
+	}
+);
+
+$("#thickRange").hover(
+	function () {
+		$("#descriptionT").append("<span> thickness</span>");
+	},
+	function () {
+		$("#descriptionT").find("span").last().remove();
 	}
 );
 $("#eraser").hover(
@@ -116,14 +127,7 @@ $("#eraser").hover(
 		$("#description3").find("span").last().remove();
 	}
 );
-$("#thickness").hover(
-	function () {
-		$("#description1").append("<span> thickness</span>");
-	},
-	function () {
-		$("#description1").find("span").last().remove();
-	}
-);
+
 $("#pickr-container").hover(
 	function () {
 		$("#description2").append("<span> Fill colour</span>");

@@ -21,12 +21,13 @@ class Text extends PaintFunction {
 		this.input.onkeydown = this.handleEnter;
 
 		document.body.appendChild(this.input);
+		cPush();
 	}
 
 	drawText(txt, x, y) {
 		this.contextReal.textBaseline = "top";
 		this.contextReal.textAlign = "left";
-		this.contextReal.font = "50px serif";
+		this.contextReal.font = "30px sans-serif";
 		this.contextReal.fillStyle = curFill;
 		this.contextReal.fillText(txt, x, y);
 	}

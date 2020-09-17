@@ -194,10 +194,33 @@ zoomOut.addEventListener("click", panzoom.zoomOut);
 //variable for paintbrushes
 var isDrawing;
 var density = 10;
-var clientX, clientY, timeout;
 function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min) + 1) + min;
 }
 function getRandomFloat(min, max) {
 	return Math.random() * (max - min) + min;
 }
+
+//thickness slider
+
+const sliderThick = document.getElementById("thickRange");
+var outputThick = document.getElementById("descriptionT");
+
+function thicknessPopup() {
+	sliderThick.addEventListener("click", function () {
+		outputThick.innerHTML = `<span> ${sliderThick.value} px</span>`;
+	});
+}
+thicknessPopup();
+
+// Update the current slider value (each time you drag the slider handle)
+sliderThick.oninput = function () {
+	outputThick.innerHTML = `<span> ${this.value} px</span>`;
+};
+
+//define thickness
+var curThick = 4;
+
+sliderThick.oninput = function () {
+	curThick = this.value;
+};

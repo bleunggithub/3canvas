@@ -5,6 +5,7 @@ class DrawBcurve extends PaintFunction {
 		// this.contextDraft = contextDraft;
 		this.clickNum = 0;
 		this.contextReal.strokeStyle = curStroke;
+		this.contextReal.lineWidth = curThick;
 	}
 	onMouseDown(coord, event) {}
 	onDragging(coord, event) {}
@@ -19,6 +20,8 @@ class DrawBcurve extends PaintFunction {
 			contextDraft.beginPath();
 			contextDraft.moveTo(this.origX, this.origY);
 			contextDraft.strokeStyle = curStroke;
+			contextDraft.lineWidth = curThick;
+
 			contextDraft.bezierCurveTo(
 				cpointX_1,
 				cpointY_1,
@@ -37,6 +40,8 @@ class DrawBcurve extends PaintFunction {
 			contextDraft.beginPath();
 			contextDraft.moveTo(this.origX, this.origY);
 			contextDraft.strokeStyle = curStroke;
+			contextDraft.lineWidth = curThick;
+
 			contextDraft.bezierCurveTo(
 				cpointX_1,
 				cpointY_1,
@@ -53,6 +58,8 @@ class DrawBcurve extends PaintFunction {
 			contextDraft.beginPath();
 			contextDraft.moveTo(this.origX, this.origY);
 			contextDraft.strokeStyle = curStroke;
+			contextDraft.lineWidth = curThick;
+
 			contextDraft.bezierCurveTo(
 				this.final_cpointX_1,
 				this.final_cpointY_1,
