@@ -144,11 +144,15 @@ function polygonPopup() {
 	var pForm = document.getElementById("polygonInput");
 	var pPopup = document.getElementById("polygonPopup");
 	var closeBtn1 = document.getElementById("closeBtn1");
+	var confirmBtn = document.getElementById("btn1");
 
 	polygonBtn.addEventListener("click", function () {
 		pPopup.style.display = "block";
 		pForm.style.display = "block";
 		closeBtn1.style.display = "block";
+	});
+	confirmBtn.addEventListener("click", function () {
+		pPopup.style.display = "none";
 	});
 }
 polygonPopup();

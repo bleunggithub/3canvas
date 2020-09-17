@@ -14,7 +14,7 @@
 		<!-- google font -->
 		<link
 			rel="stylesheet"
-			href="https://fonts.googleapis.com/css?family=Kumbh+Sans|Namum+Gothic:wght@700;800"
+			href="https://fonts.googleapis.com/css?family=Kumbh+Sans"
 		/>
 		<!-- Bootstrap core CSS -->
 		<link
@@ -60,7 +60,8 @@
 					<!-- straight line button -->
 					<span class="button fas fa-slash" id="line"></span>
 					<!-- qCurve button -->
-					<span class="button fab fa-confluence" id="curveQuadratic"></span
+					<span class="button" id="curveQuadratic"
+						><img src="./images/qCurveT.png" /></span
 					><!-- bCurve button -->
 					<span class="button fas fa-signature" id="curveBezier"></span>
 					<!-- rectangle button  -->
@@ -79,18 +80,18 @@
 							id="closeBtn1"
 						>
 							&#10005;</span
-						>
+						><br />
 						<div id="polygonInput">
 							<input
 								type="range"
-								min="1"
+								min="3"
 								max="10"
 								value="5"
 								class="slider"
 								id="myRange"
 							/>
 							<p id="demo"></p>
-							<button class="btn">Start</button>
+							<button class="btn" id="btn1">Start</button>
 						</div>
 					</div>
 					<!-- freehand Polygon button -->
@@ -117,14 +118,14 @@
 
 				<!-- group three buttons -->
 				<div id="buttonGroup3" class="col-lg-6 col-md-3 col-sm-3">
-					<!-- grid button -->
-					<span class="button fas fa-border-none" id="grid"></span>
 					<!-- eraser button -->
 					<span class="button fas fa-eraser" id="eraser"></span>
 					<!-- undo button  -->
 					<span class="button fas fa-undo" id="undo"></span>
 					<!-- redo button  -->
 					<span class="button fas fa-redo" id="redo"></span>
+					<!-- grid button -->
+					<span class="button fas fa-border-none" id="grid"></span>
 					<!-- zoom in button  -->
 					<span class="button fas fa-search-plus" id="zoomIn"></span>
 					<!-- zoom out button  -->

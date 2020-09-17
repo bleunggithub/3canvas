@@ -14,6 +14,7 @@ class DrawQcurve extends PaintFunction {
 			var cpointX = coord[0];
 			var cpointY = coord[1];
 			contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+			contextDraft.strokeStyle = curStroke;
 			contextDraft.beginPath();
 			contextDraft.moveTo(this.origX, this.origY);
 			contextDraft.quadraticCurveTo(cpointX, cpointY, coord[0], coord[1]);
@@ -53,6 +54,7 @@ class DrawQcurve extends PaintFunction {
 			var cpointX = coord[0];
 			var cpointY = coord[1];
 			this.contextReal.beginPath();
+			this.contextReal.strokeStyle = curStroke;
 			this.contextReal.moveTo(this.origX, this.origY);
 			this.contextReal.quadraticCurveTo(
 				cpointX,

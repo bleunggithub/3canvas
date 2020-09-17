@@ -85,15 +85,20 @@ span {
 #text {
 	margin-right: 20px;
 }
+#curveQuadratic {
+	padding-top: 0.15vh;
+	padding-bottom: 0.6vh;
+	position: relative;
+	bottom: 2px;
+}
+
 #curveBezier {
 	margin-right: 20px;
 }
 #drawPolygon {
 	margin-right: 20px;
 }
-#grid {
-	margin-right: 20px;
-}
+
 #redo {
 	margin-right: 20px;
 }
@@ -102,36 +107,6 @@ span {
 }
 #save {
 	margin-right: 20px;
-}
-/* polygon input */
-#polygonPopup {
-	display: none;
-	position: absolute;
-	padding: 2%;
-	top: -125px;
-	width: 230px;
-	border: 1px solid #c5ccb7;
-	border-radius: 10px;
-	z-index: 5;
-	background-color: #fff;
-	font-size: 0.7em;
-	animation: bounceIn2 1.5s ease forwards;
-}
-@keyframes bounceIn2 {
-	0% {
-		transform: translateX(0px);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(100px);
-		opacity: 1;
-	}
-}
-#polygonInput {
-	display: none;
-}
-#closeBtn1 {
-	text-align: right;
 }
 
 /* coordinates */
@@ -154,7 +129,7 @@ span {
 	display: none;
 	position: absolute;
 	padding: 2%;
-	top: -100px;
+	top: -135px;
 	width: 230px;
 	border: 1px solid #c5ccb7;
 	border-radius: 10px;
@@ -201,42 +176,74 @@ a:hover {
 	border-radius: 5px;
 }
 
-/* slider */
+/*//////////////////////////  fixed polygon //////////////////////////*/
+#polygonPopup {
+	display: none;
+	position: absolute;
+	padding: 2%;
+	top: -180px;
+	width: 230px;
+	border: 1px solid #c5ccb7;
+	border-radius: 10px;
+	z-index: 5;
+	background-color: #fff;
+	font-size: 0.7em;
+	animation: bounceIn2 1.5s ease forwards;
+	text-align: center;
+}
+@keyframes bounceIn2 {
+	0% {
+		transform: translateX(0px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(100px);
+		opacity: 1;
+	}
+}
+#polygonInput {
+	display: none;
+}
+#closeBtn1 {
+	text-align: right;
+}
+/* ploygon slider */
 #polygonInput {
 	width: 100%; /* Width of the outside container */
 }
-
 /* The slider itself */
 .slider {
 	-webkit-appearance: none; /* Override default CSS styles */
 	appearance: none;
 	width: 100%; /* Full-width */
-	height: 25px; /* Specified height */
+	height: 15px; /* Specified height */
 	background: #d3d3d3; /* Grey background */
 	outline: none; /* Remove outline */
 	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
 	-webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
 	transition: opacity 0.2s;
+	text-align: center;
 }
-
 /* Mouse-over effects */
 .slider:hover {
 	opacity: 1; /* Fully shown on mouse-over */
 }
-
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
 	-webkit-appearance: none; /* Override default look */
 	appearance: none;
 	width: 25px; /* Set a specific slider handle width */
-	height: 25px; /* Slider handle height */
-	background: #4caf50; /* Green background */
+	height: 15px; /* Slider handle height */
+	background: #535353; /* Green background */
 	cursor: pointer; /* Cursor on hover */
 }
-
 .slider::-moz-range-thumb {
 	width: 25px; /* Set a specific slider handle width */
-	height: 25px; /* Slider handle height */
-	background: #4caf50; /* Green background */
+	height: 15px; /* Slider handle height */
+	background: #535353; /* Green background */
 	cursor: pointer; /* Cursor on hover */
+}
+.btn {
+	font-size: 1em;
+	border: 1px solid #535353;
 }
