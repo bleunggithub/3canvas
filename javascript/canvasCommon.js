@@ -117,6 +117,9 @@ $(() => {
 	$("#text").click(() => {
 		currentFunction = new Text(contextReal);
 	});
+	$("#geo").click(() => {
+		currentFunction = new GeoLines(contextReal, contextDraft);
+	});
 });
 
 //credits
@@ -200,6 +203,7 @@ function getRandomInt(min, max) {
 function getRandomFloat(min, max) {
 	return Math.random() * (max - min) + min;
 }
+var points = [];
 
 //thickness slider
 

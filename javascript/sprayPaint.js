@@ -43,6 +43,7 @@ class SprayPaint extends PaintFunction {
 			cPush();
 		};
 	}
+
 	onMouseLeave() {}
 	onMouseEnter() {}
 }
